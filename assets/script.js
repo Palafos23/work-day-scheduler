@@ -9,9 +9,14 @@ $(document).ready(function () {
   var userText = $(this).siblings(".description").val();
   var timeBlockId = $(saveButton).parent().attr("id");
 
-  
-  localStorage.setItem(timeBlockId, JSON.stringify(userText));
  
+  localStorage.setItem(timeBlockId, JSON.stringify(userText));
+  
+  var savedInput = JSON.parse(localStorage.getItem(userText));
+if (savedInput) {
+  this.children(1).append(savedInput);
+}
+
 })
 
  for (var i = 0; i < timeBlock.length; i++){
@@ -27,9 +32,9 @@ $(document).ready(function () {
        $(timeBlock[i]).children().eq(1).addClass('future');
       
  }
+
 }
 
-    
   var currentDay = dayjs().format('dddd, MMMM D');
   $('#currentDay').text(currentDay);
 })
