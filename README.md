@@ -28,3 +28,4 @@ THEN the saved events persist
 ```
 
 ## Deployment URL
+https://palafos23.github.io/work-day-scheduler/
